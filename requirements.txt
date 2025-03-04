@@ -1,5 +1,0 @@
-streamlit
-fitz
-io
-PIL
-pdfminer
