@@ -2,6 +2,7 @@
 #<iframe src="https://pdf_extract_demo.streamlit.app?embed=true" style="height: 450px; width: 100%;"></iframe>
 
 import streamlit as st
+import pymupdf
 import fitz
 import io
 from PIL import Image
