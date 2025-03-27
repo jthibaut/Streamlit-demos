@@ -1,9 +1,3 @@
 streamlit
 PyMuPDF
-#fitz
-#io
-#PIL
-pdfminer-six
 pdfminer.six
-#flask
-#request
