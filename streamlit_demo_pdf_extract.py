@@ -24,12 +24,12 @@ st.subheader("Text extract")
 
 # Use interface to ask the page to extract the text
 #number = st.number_input("Which page do you want to extract ?", min_value=1, max_value=len(open_file), step=1)
-number = st.number_input("Which page do you want to extract ?", min_value=0, max_value=len(open_file), step=1)
+number = st.number_input("Which page do you want to extract ?", min_value=1, max_value=len(open_file), step=1)
 
 
 if st.button("Click to process", key=1):
     st.write("The requested page to extract is", number)
-    text = open_file[number].get_text()
+    text = open_file[number-1].get_text()
     st.write(text)
 
 # XML creation with PDF miner 6
@@ -60,12 +60,12 @@ if st.button("Click to process", key=3):
 st.subheader("Pictures extract")
 
 # Use interface to ask the page to extract the text
-number_image = st.number_input("Which page do you want to extract pictures ?", min_value=0, max_value=len(open_file), step=1)
+number_image = st.number_input("Which page do you want to extract pictures ?", min_value=1, max_value=len(open_file), step=1)
 
 # Display of the pictures in the webpage
 if st.button("Click to process", key=2):
     st.write("The requested page to extract pictures is", number_image)
-    xref = open_file.get_page_images(number_image)
+    xref = open_file.get_page_images(number_image-1)
     images = []
     for i in range(len(xref)):
         fitz.Pixmap(open_file, xref[i][0]).save("picture_{}.png".format(i))
